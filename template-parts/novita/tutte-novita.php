@@ -50,7 +50,7 @@ global $the_query, $load_posts, $load_card_type;
                             </span>
                         </div>
                         <p id="autocomplete-label" class="u-grey-light text-paragraph-card mt-2 mb-30 mt-lg-3 mb-lg-40">
-                            <?php echo $the_query->found_posts; ?> notizie trovate in ordine alfabetico
+                            <?php echo $the_query->found_posts; ?> notizie trovate
                         </p>
                     </div>
                 </div>

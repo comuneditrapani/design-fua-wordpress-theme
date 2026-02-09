@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <p id="autocomplete-label" class="mb-4">
-                    <strong><?php echo $the_query->found_posts; ?> </strong>servizi trovati in ordine alfabetico
+                    <?php echo $the_query->found_posts; ?> servizi trovati in ordine alfabetico
                     </p>
                 </div>
                 <div id="load-more">
