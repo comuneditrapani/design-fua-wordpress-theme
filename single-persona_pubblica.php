@@ -194,10 +194,10 @@ get_header();
 		  </nav>
 		</div>
 	  </aside>
-	  <section class="col-lg-8 it-page-sections-container border-light">
+	  <article class="col-lg-8 it-page-sections-container border-light">
 
         <?php if( is_array($incarico) && count($incarico) ) { ?>
-		<article class="it-page-section anchor-offset" data-audio>
+		<section class="it-page-section anchor-offset" data-audio>
 		  <h4 id="incarico">Incarico</h4>
 		  <div class="richtext-wrapper lora">
 			<?php
@@ -207,7 +207,7 @@ get_header();
               }
             ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 		<?php
             if( $incarico == "Sindaco" ) {
@@ -216,17 +216,17 @@ get_header();
                 $tipo_incarico = "Amministrativo";
             }
         ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="tipo-incarico">Tipo di incarico</h4>
 		  <div class="richtext-wrapper lora">
 			<?php
                 echo $tipo_incarico;
             ?>
 		  </div>
-        </article>
+        </section>
 
         <?php if( is_array($organizzazioni) && count($organizzazioni) ) { ?>
-		<article class="it-page-section anchor-offset mt-5"  data-audio>
+		<section class="it-page-section anchor-offset mt-5"  data-audio>
           <h4 id="organizzazioni">Organizzazioni</h4>
           <div class="row">
             <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
@@ -238,47 +238,47 @@ get_header();
               ?>
             </div>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if( $competenze ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="competenze">Competenze</h4>
 		  <div class="richtext-wrapper lora">
 			<?php echo $competenze; ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 
 		<?php if( $deleghe ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="deleghe">Deleghe</h4>
 		  <div class="richtext-wrapper lora">
 			<?php echo $deleghe; ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 
 		<?php if( $biografia ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="biografia">Biografia</h4>
 		  <div class="richtext-wrapper lora">
 			<?php echo $biografia; ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 
 		<?php if( is_array($punti_contatto) && count($punti_contatto) ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="contatti" class="mb-3">Contatti</h4>
 		  <?php foreach ($punti_contatto as $pc_id) {
             get_template_part('template-parts/single/punto-contatto');
                                     } ?>
-		</article>
+		</section>
 		<?php } ?>
 
         <?php if( is_array($curriculum_vitae) && count($curriculum_vitae) ) { ?>
-		<article class="it-page-section anchor-offset mt-5">
+		<section class="it-page-section anchor-offset mt-5">
 		  <h4 id="curriculum-vitae">Curriculum vitae</h4>
 		  <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 			<?php foreach ($curriculum_vitae as $all_url) {
@@ -301,22 +301,22 @@ get_header();
 			</div>
 			<?php } ?>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if( $situazione_patrimoniale ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="situazione-patrimoniale">Situazione patrimoniale</h4>
 		  <div class="richtext-wrapper lora">
 			<?php echo $situazione_patrimoniale; ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 
 
 
 		<?php if( is_array($dichiarazione_redditi) && count($dichiarazione_redditi) ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="dichiarazione-redditi">Dichiarazione dei redditi</h4>
 		  <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 			<?php foreach ($dichiarazione_redditi as $all_url) {
@@ -339,11 +339,11 @@ get_header();
 			</div>
 			<?php } ?>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if( is_array($spese_elettorali) && count($spese_elettorali) ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="spese-elettorali">Spese elettorali</h4>
 		  <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 			<?php foreach ($spese_elettorali as $all_url) {
@@ -366,11 +366,11 @@ get_header();
 			</div>
 			<?php } ?>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if( is_array($variazione_situazione_patrimoniale) && count($variazione_situazione_patrimoniale) ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="variazione-situazione-patrimoniale">Variazione situazione patrimoniale</h4>
 		  <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 			<?php foreach ($variazione_situazione_patrimoniale as $all_url) {
@@ -393,11 +393,11 @@ get_header();
 			</div>
 			<?php } ?>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if( is_array($altre_cariche) && count($altre_cariche) ) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="altre-cariche">Altre cariche</h4>
 		  <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 			<?php foreach ($altre_cariche as $all_url) {
@@ -420,26 +420,27 @@ get_header();
 			</div>
 			<?php } ?>
 		  </div>
-		</article>
+		</section>
 		<?php } ?>
 
 		<?php if ($more_info) { ?>
-		<article class="it-page-section anchor-offset mt-5" data-audio>
+		<section class="it-page-section anchor-offset mt-5" data-audio>
 		  <h4 id="ulteriori-informazioni">Ulteriori informazioni</h4>
 		  <div class="richtext-wrapper lora">
 			<?php echo $more_info; ?>
 		  </div>
-        </article>
+        </section>
 		<?php } ?>
 
-		<article class="article-wrapper" data-audio>
+		<section class="article-wrapper" data-audio>
 		  <div class="row">
 			<div class="col-lg-12">
 			  <?php get_template_part( "template-parts/single/bottom" ); ?>
 			</div><!-- /col-lg-9 -->
 		  </div><!-- /row -->
 
-		</article>
+		</section>
+      </article>
 	</div>
   </div>
   <?php get_template_part("template-parts/common/valuta-servizio"); ?>
