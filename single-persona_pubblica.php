@@ -12,11 +12,12 @@ get_header();
 ?>
     <main>
         <?php
+        $prefix = '_dci_persona_pubblica_';
         while ( have_posts() ) :
             the_post();
             $user_can_view_post = dci_members_can_user_view_post(get_current_user_id(), $post->ID);
             $descrizione_breve = dci_get_meta("descrizione_breve", $prefix, $post->ID);
-			$incarico_id = dci_get_meta('incarichi', $prefix, $persona_id);
+			$incarico = dci_get_meta('incarichi', $prefix, $post->ID);
 			$organizzazioni = dci_get_meta("organizzazioni", $prefix, $post->ID);
 			$responsabile_di = dci_get_meta("responsabile_di", $prefix, $post->ID);
 			$data_conclusione_incarico = dci_get_meta("data_conclusione_incarico", $prefix, $post->ID);
@@ -126,7 +127,7 @@ get_header();
 																	</a>
 																	</li>
 																	<?php } ?>
-																	<?php if( $curriculum_vitaerimuovere == 2 /*modificare per mostrare CV*/ ) { ?>
+																	<?php if( $curriculum_vitae == 2 /*modificare per mostrare CV*/ ) { ?>
 																	<li class="nav-item">
 																		<a class="nav-link" href="#curriculum-vitae">
 																		<span>Curriculum vitae</span>
@@ -188,12 +189,12 @@ get_header();
 						</aside>
 						<section class="col-lg-8 it-page-sections-container border-light">
 									
-						<?php if( $incarico_id ) { ?>
+                        <?php if( is_array($incarico) && count($incarico) ) { ?>
 						<article class="it-page-section anchor-offset" data-audio>
 							<h4 id="incarico">Incarico</h4>
 							<div class="richtext-wrapper lora">
 								<?php
-									foreach ($incarico_id as $inc_id) {
+									foreach ($incarico as $inc_id) {
 										$incarico = get_the_title($inc_id);
 										echo $incarico = get_the_title($inc_id);
 									}
@@ -216,6 +217,7 @@ get_header();
 							</div>
                     	</article>	
 							
+                        <?php if( is_array($organizzazioni) && count($organizzazioni) ) { ?>
 						<article class="it-page-section anchor-offset mt-5"  data-audio>
                         <h4 id="organizzazioni">Organizzazioni</h4>
                         <div class="row">
@@ -227,6 +229,7 @@ get_header();
                         </div>
 						</div>
 						</article>
+						<?php } ?>
 							
 						<?php if( $competenze ) { ?>
 						<article class="it-page-section anchor-offset mt-5" data-audio>
@@ -264,7 +267,7 @@ get_header();
 						</article>
 						<?php } ?>
 							
-						<?php if( $curriculum_vitaerimuovere == 2 /*modificare per mostrare CV*/ ) { ?>
+                        <?php if( is_array($curriculum_vitae) && count($curriculum_vitae) ) { ?>
 						<article class="it-page-section anchor-offset mt-5">
 							<h4 id="curriculum-vitae">Curriculum vitae</h4>
 							<div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
