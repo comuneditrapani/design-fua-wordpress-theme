@@ -36,7 +36,7 @@ get_header();
         $more_info = dci_get_wysiwyg_field("ulteriori_informazioni", $prefix, $post->ID);
 
   ?>
-  <div class="container px-4 my-4" id="main-container">
+  <div class="container px-4" id="main-container">
     <div class="row">
       <div class="col px-lg-4">
         <?php get_template_part("template-parts/common/breadcrumb"); ?>
